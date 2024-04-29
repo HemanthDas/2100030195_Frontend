@@ -19,7 +19,7 @@ nav {
     color: rgb(255, 255, 255);
     padding: 15px;
     font-size: 1.1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: 300;
     font-style: normal;
   }
@@ -27,5 +27,34 @@ nav {
     background-color: rgb(158, 158, 158);
   }
 }
+
 /* Home */
 /* Employee */
+
+table {
+  display: flex;
+  justify-content: center;
+}
+/* Add */
+#add {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    label {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
