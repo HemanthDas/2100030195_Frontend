@@ -7,12 +7,7 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-a {
-  font-size: 1.1rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
+
 a:active,
 a:hover {
   background-color: rgb(54, 54, 54);
@@ -29,6 +24,12 @@ nav {
     color: rgb(255, 255, 255);
     padding: 15px;
   }
+  a {
+    font-size: 1.1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
 }
 
 /* Home */
@@ -36,7 +37,13 @@ nav {
 #employee {
   display: flex;
   flex-direction: column;
-  a {
+  > a {
+    font-size: 1.1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  > a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     background-color: black;
@@ -45,7 +52,7 @@ nav {
     border-radius: 1rem;
     margin: 0.8rem;
   }
-  a:active,
+  > a:active,
   a:hover {
     background-color: rgb(54, 54, 54);
   }
@@ -68,6 +75,27 @@ table {
   }
   tr:nth-child(odd) {
     background-color: rgb(255, 255, 255);
+  }
+}
+td:last-child {
+  display: flex;
+  justify-content: space-around;
+  > button {
+    text-decoration: none;
+    min-width: 50px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+  }
+  a:hover {
+    background-color: transparent;
   }
 }
 /* Add */

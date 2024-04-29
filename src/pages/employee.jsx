@@ -34,6 +34,9 @@ const Employee = () => {
               <td>{employee.department}</td>
               <PipeHelper employee={employee} />
               <td>
+                <button>
+                  <Link to={`/edit/${employee.id}`}>EDIT</Link>
+                </button>
                 <button
                   onClick={() => {
                     setEmployee(
@@ -41,7 +44,7 @@ const Employee = () => {
                     );
                   }}
                 >
-                  Delete
+                  DELETE
                 </button>
               </td>
             </tr>
