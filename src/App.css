@@ -7,6 +7,16 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  font-size: 1.1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+a:active,
+a:hover {
+  background-color: rgb(54, 54, 54);
+}
 /* Navbar */
 nav {
   width: 100%;
@@ -18,19 +28,28 @@ nav {
     text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 15px;
-    font-size: 1.1rem;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  & > a:active {
-    background-color: rgb(158, 158, 158);
   }
 }
 
 /* Home */
 /* Employee */
-
+#employee {
+  display: flex;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    align-self: flex-end;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin: 0.8rem;
+  }
+  a:active,
+  a:hover {
+    background-color: rgb(54, 54, 54);
+  }
+}
 table {
   display: flex;
   justify-content: center;
@@ -42,6 +61,7 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   form {
     display: flex;
     flex-direction: column;
