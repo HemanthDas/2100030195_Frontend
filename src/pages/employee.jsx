@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import employeData from "../assets/employees.json";
+import PipeHelper from "../components/pipehelper.jsx";
 
 const Employee = () => {
+  const [employees, setEmployee] = useState(employeData);
   return (
     <div id="employee">
       <Link to="/add">Add Employee</Link>
@@ -16,9 +20,33 @@ const Employee = () => {
             <th>Department</th>
             <th>Position</th>
             <th>Salary</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {employees.map((employee) => (
+            <tr key={employee.id}>
+              <td>{employee.id}</td>
+              <td>{employee.firstName}</td>
+              <td>{employee.lastName}</td>
+              <td>{employee.age}</td>
+              <td>{employee.gender}</td>
+              <td>{employee.department}</td>
+              <PipeHelper employee={employee} />
+              <td>
+                <button
+                  onClick={() => {
+                    setEmployee(
+                      employees.filter((item) => item.id !== employee.id)
+                    );
+                  }}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       <div></div>
     </div>

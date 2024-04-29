@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sam",
+    "lastName": "Adam",
+    "gender": "Male",
+    "age": 45,
+    "department": "IT"
+  },
+  {
+    "id": 2,
+    "firstName": "John",
+    "lastName": "Jacob",
+    "gender": "Male",
+    "age": 35,
+    "department": "Sales"
+  }
+]

@@ -1,12 +1,19 @@
-import data from "../assets/employees";
+import data from "../assets/employees.json";
 import PropTypes from "prop-types";
 import { useNavigate } from "@tanstack/react-router";
 const AddItem = ({ newData }) => {
   const navigate = useNavigate();
   const onAdd = () => {
-    console.log(newData);
+    if (Object.keys(newData).length < 4) {
+      alert("Please fill in all fields");
+      return;
+    }
+    console.log(newData.gender);
+    const gender =
+      newData.gender === 0 ? "Female" : newData.gender === 1 ? "Male" : "Other";
+    newData.id = data.length + 1;
+    newData.gender = gender;
     data.push(newData);
-    console.log(data);
     navigate({ to: "/employee" });
   };
 

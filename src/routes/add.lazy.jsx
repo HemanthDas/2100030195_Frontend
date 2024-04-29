@@ -45,9 +45,9 @@ const Add = () => {
               setData({ ...data, gender: e.target.value });
             }}
           >
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
+            <option value={1}>Male</option>
+            <option value={0}>Female</option>
+            <option value={2}>Other</option>
           </select>
         </label>
         <label>
@@ -56,15 +56,6 @@ const Add = () => {
             type="text"
             onChange={(e) => {
               setData({ ...data, department: e.target.value });
-            }}
-          />
-        </label>
-        <label>
-          Position:
-          <input
-            type="text"
-            onChange={(e) => {
-              setData({ ...data, position: e.target.value });
             }}
           />
         </label>
