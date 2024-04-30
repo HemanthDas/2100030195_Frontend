@@ -42,8 +42,6 @@ nav {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: 300;
     font-style: normal;
-  }
-  > a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     background-color: black;
@@ -52,7 +50,7 @@ nav {
     border-radius: 1rem;
     margin: 0.8rem;
   }
-  > a:active,
+  & > a:active,
   a:hover {
     background-color: rgb(54, 54, 54);
   }
@@ -88,18 +86,21 @@ td:last-child {
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     background-color: transparent;
   }
-  a:hover {
-    background-color: transparent;
+  a:hover,
+  a:active {
+    background-color: black !important;
   }
 }
 /* Add */
-#add {
+#add,
+#edit {
   height: 80vh;
   display: flex;
   flex-direction: column;

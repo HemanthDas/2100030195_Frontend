@@ -12,7 +12,7 @@ const Add = () => {
         }}
       >
         <label>
-          First Name:
+          First Name:{" "}
           <input
             type="text"
             onChange={(e) => {
@@ -21,7 +21,7 @@ const Add = () => {
           />
         </label>
         <label>
-          Last Name:
+          Last Name:{" "}
           <input
             type="text"
             onChange={(e) => {
@@ -30,7 +30,7 @@ const Add = () => {
           />
         </label>
         <label>
-          Age:
+          Age:{" "}
           <input
             type="number"
             onChange={(e) => {
@@ -39,7 +39,7 @@ const Add = () => {
           />
         </label>
         <label>
-          Gender
+          Gender:{" "}
           <select
             onChange={(e) => {
               setData({ ...data, gender: e.target.value });
@@ -51,7 +51,7 @@ const Add = () => {
           </select>
         </label>
         <label>
-          Department:
+          Department:{" "}
           <input
             type="text"
             onChange={(e) => {

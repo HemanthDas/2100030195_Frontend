@@ -8,12 +8,19 @@ const AddItem = ({ newData }) => {
       alert("Please fill in all fields");
       return;
     }
-    console.log(newData.gender);
-    const gender =
-      newData.gender === 0 ? "Female" : newData.gender === 1 ? "Male" : "Other";
+    let gender = "";
+    if (newData.gender === 0) {
+      gender = "Female";
+    } else if (newData.gender === 1) {
+      gender = "Male";
+    } else {
+      gender = "Other";
+    }
+
     newData.id = data.length + 1;
     newData.gender = gender;
     data.push(newData);
+    localStorage.setItem("employees", JSON.stringify(data));
     navigate({ to: "/employee" });
   };
 

@@ -1,10 +1,23 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import employeData from "../assets/employees.json";
 import PipeHelper from "../components/pipehelper.jsx";
 
 const Employee = () => {
-  const [employees, setEmployee] = useState(employeData);
+  const [employees, setEmployees] = useState(
+    JSON.parse(localStorage.getItem("employees")) || employeData
+  );
+  useEffect(() => {
+    if (localStorage.getItem("employees") === null)
+      localStorage.setItem("employees", JSON.stringify(employeData));
+  }, []);
+  const handleDelete = (id) => {
+    return () => {
+      const newEmployees = employees.filter((employee) => employee.id !== id);
+      setEmployees(newEmployees);
+      localStorage.setItem("employees", JSON.stringify(newEmployees));
+    };
+  };
   return (
     <div id="employee">
       <Link to="/add">Add Employee</Link>
@@ -37,15 +50,7 @@ const Employee = () => {
                 <button>
                   <Link to={`/edit/${employee.id}`}>EDIT</Link>
                 </button>
-                <button
-                  onClick={() => {
-                    setEmployee(
-                      employees.filter((item) => item.id !== employee.id)
-                    );
-                  }}
-                >
-                  DELETE
-                </button>
+                <button onClick={handleDelete(employee.id)}>DELETE</button>
               </td>
             </tr>
           ))}
